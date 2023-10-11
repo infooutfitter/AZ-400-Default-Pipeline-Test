@@ -9,8 +9,15 @@ trigger:
 pool: infoout-target1
 
 steps:
+
+- task: Bash@3
+  inputs:
+   targetType: 'inline'
+   script: |
+     ./helloWorld.sh
+   failOnStderr: true
+   workingDirectory: "$(System.DefaultWorkingDirectory)/projectFolder/"
+
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- script: helloWorld.sh
-  displayName: 'Run a mainline script'
