@@ -16,7 +16,7 @@ steps:
    script: |
      ./helloWorld.sh
    failOnStderr: true
-   workingDirectory: "$(System.DefaultWorkingDirectory)/projectFolder/"
+   workingDirectory: "."
 
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
